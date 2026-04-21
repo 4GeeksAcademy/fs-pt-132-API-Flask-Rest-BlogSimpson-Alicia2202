@@ -23,17 +23,17 @@ class Favorites(db.Model):
                 "id": self.user.id
             },
             "character":{
-                "id": self.character.id,
-                "name": self.character.name,
-                "age": self.character.age,
-                "gender": self.character.gender,
-                "occupation": self.character.occupation
+                "id": self.character.id if self.character else None,
+                "name": self.character.name if self.character else None,
+                "age": self.character.age if self.character else None,
+                "gender": self.character.gender if self.character else None,
+                "occupation": self.character.occupation if self.character else None,
             },
 
             "episode": {
-                "id": self.episode.id,
-                "name": self.episode.name,
-                "synopsis": self.episode.synopsis
+                "id": self.episode.id if self.episode else None,
+                "name": self.episode.name if self.episode else None,
+                "synopsis": self.episode.synopsis if self.episode else None
             }
         }
 
