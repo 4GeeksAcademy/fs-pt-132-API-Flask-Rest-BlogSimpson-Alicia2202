@@ -8,7 +8,7 @@ class Favorites(db.Model):
     __tablename__= "favorites"
     id: Mapped[int] = mapped_column(primary_key=True)
     # clavesforaneas
-    user_id: Mapped[int] = mapped_column(ForeignKey("user.id"))
+    user_id: Mapped[int] = mapped_column(ForeignKey("user.id"), nullable = False)
     character_id: Mapped[int] = mapped_column(ForeignKey("character.id"), nullable = True)
     episode_id: Mapped[int] = mapped_column(ForeignKey("episode.id"), nullable = True)
     #relacion
